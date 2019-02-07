@@ -1,0 +1,11 @@
+{% extends 'CairoPost/base.html' %}
+{% block title %}
+	Articles
+{% endblock %}
+{% block body %}
+	<h2> here to find all articles </h2>
+	{% for art in article %}
+		<h2><a href="{% url 'article_details' pk=art.pk %}">{{ art.title }}</a></h2>
+		<p>{{ art.body }}</p>
+	{% endfor %}
+{% endblock %}
